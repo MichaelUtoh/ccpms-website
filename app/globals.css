@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* ── Brand tokens (light mode first) ── */
+:root {
+  --ink: #0f1b2d;
+  --ink-muted: #4a5868;
+  --panel: #0f1b2d;
+  --surface: #ffffff;
+  --surface-alt: #f4f6f8;
+  --line: #e2e7ed;
+  --primary: #1f4fd8;
+  --revenue: #0e9f6e;
+  --accent: #f2a93b;
+  --risk: #d64545;
+}
+
+/* ── Tailwind theme bridge ── */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-panel: var(--panel);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-revenue: var(--revenue);
+  --color-accent: var(--accent);
+  --color-risk: var(--risk);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-heading);
+}
+
+/* ── Dark mode overrides ──
+   Explicit choice (data-theme, set by ThemeToggle) wins; otherwise follow the OS. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e8edf3;
+  --ink-muted: #9aa5b4;
+  --surface: #0d1520;
+  --surface-alt: #141f2e;
+  --line: #1f2d3d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ink: #e8edf3;
+    --ink-muted: #9aa5b4;
+    --surface: #0d1520;
+    --surface-alt: #141f2e;
+    --line: #1f2d3d;
+  }
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-inter, Inter, system-ui, sans-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading, "Plus Jakarta Sans", system-ui, sans-serif);
+}
+
+/* Tabular figures for KPI numbers */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Count-up animation */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bar-fill {
+  from { width: 0; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-progress {
+  from { width: 0; }
+}
