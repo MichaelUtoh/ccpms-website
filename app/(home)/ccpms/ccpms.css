@@ -1,0 +1,18 @@
+/* Re-themes the existing Tailwind-based CCPMS mockups to the orange homepage palette. */
+.bnhq{
+  --primary:#ff6500;
+  --accent:#ff9a4d;
+  --revenue:#16866a;
+  --surface:#fff;
+  --surface-alt:#f5f7fa;
+  --ink-muted:#657187;
+  --font-heading:var(--font-inter);
+}
+.mockup-stage{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.mockup-stage.flip>:first-child{order:2}
+.mockup-stage .split-copy h2{margin-top:12px}
+.mockup-stage ul.ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;font-size:14px;color:#45536a}
+.mockup-stage ul.ticks li:before{content:"✓";color:#ff6500;font-weight:800;margin-right:10px}
+.mockup-wrap{min-width:0}
+.ccpms-hero-mock{margin-top:44px}
+@media(max-width:900px){.mockup-stage{grid-template-columns:1fr;gap:26px}.mockup-stage.flip>:first-child{order:0}}
