@@ -29,6 +29,7 @@ function Ring({
 
   return (
     <div className="flex flex-col items-center gap-1.5">
+      <div className="relative w-14 h-14">
       <svg width="56" height="56" viewBox="0 0 56 56" className="-rotate-90">
         <circle
           cx="28"
@@ -50,13 +51,12 @@ function Ring({
           style={{ transition: "stroke-dasharray 0.8s ease" }}
         />
       </svg>
-      <div className="text-center -mt-12 mb-6">
-        <p
-          className="font-heading font-bold text-sm tabular"
-          style={{ color }}
-        >
-          {value}%
-        </p>
+      <span
+        className="absolute inset-0 flex items-center justify-center font-heading font-bold text-sm tabular"
+        style={{ color }}
+      >
+        {value}%
+      </span>
       </div>
       <p className="text-[10px] text-ink-muted text-center leading-tight">
         {label}
