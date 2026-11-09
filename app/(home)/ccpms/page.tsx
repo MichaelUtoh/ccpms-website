@@ -115,7 +115,7 @@ export default function CcpmsPage() {
         <header className="hero" style={{ paddingBottom: 70 }}>
           <div className="container" style={{ paddingTop: 80, position: "relative", zIndex: 1 }}>
             <div className="kicker" style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ width: 44, height: 3, background: "#ff6500" }} />PRODUCT 02 · CCPMS
+              {/* <span style={{ width: 44, height: 3, background: "#ff6500" }} />PRODUCT 02 · CCPMS */}
             </div>
             <h1 style={{ fontSize: "clamp(38px,5.5vw,66px)", lineHeight: 1.05, letterSpacing: -2.5, maxWidth: 820, margin: "18px 0" }}>
               Don&apos;t just manage calls. <span style={{ color: "#ff7a1a" }}>Manage performance.</span>

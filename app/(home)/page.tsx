@@ -104,7 +104,17 @@ export default function HomePage() {
               <div className="eyebrow">YOUR BUSINESS. YOUR NUMBER. YOUR IDENTITY.</div>
               <h1>Your business deserves <em>its own number.</em></h1>
               <p className="hero-copy">
-                Stop mixing business calls with personal calls. Give customers a professional number, welcome every caller, route enquiries to the right person and keep a record of your conversations — all from your mobile phone.
+                Stop mixing business calls with personal calls. 
+                {/* Give customers a professional number, welcome every caller, route enquiries to the right person and keep a record of your conversations — all from your mobile phone. */}
+                <ul>
+                  <li className="bullet-item">Welcome every caller with your customized greeting</li>
+                  <li className="bullet-item">Route enquiries to the right person e.g Press 1 for Sales, Press 2 for Finance
+</li>
+                  <li className="bullet-item">All customer conversations are recorded.</li>
+                  <li className="bullet-item">It works on your mobile phone.</li>
+                  <li className="bullet-item">Call analytics are available</li>
+                  <li className="bullet-item">You can set up after office mesaages</li>
+                </ul>
               </p>
               <div className="hero-ctas">
                 <OpenModalButton modal="signup" className="btn btn-gold">Get Your Business Number <span>→</span></OpenModalButton>
@@ -146,7 +156,8 @@ export default function HomePage() {
         <div className="trust-strip">
           <div className="container trust-grid">
             {trust.map((t, i) => (
-              <div className="trust-item" key={t}><b>{String(i + 1).padStart(2, "0")}</b> {t}</div>
+              // <div className="trust-item" key={t}><b>{String(i + 1).padStart(2, "0")}</b> {t}</div>
+              <div className="trust-item" key={t}><b>•</b> {t}</div>
             ))}
           </div>
         </div>
@@ -174,7 +185,7 @@ export default function HomePage() {
         <section id="mobile-pbx">
           <div className="container">
             <div className="section-head">
-              <div className="kicker">PRODUCT 01 · MOBILE CLOUD PBX</div>
+              <div className="kicker">MOBILE CLOUD PBX</div>
               <h2>Everything your business needs to handle calls professionally.</h2>
               <p>More than a telephone number. A mobile business phone system that helps you welcome, direct, manage and keep track of customer conversations.</p>
             </div>
@@ -254,7 +265,7 @@ export default function HomePage() {
             </div>
             <div className="product-grid">
               <div className="product-card pb">
-                <div className="product-tag">PRODUCT 01</div>
+                {/* <div className="product-tag">PRODUCT 01</div> */}
                 <h3>Mobile Cloud PBX</h3>
                 <p>A professional business number and a smarter way to manage customer calls from your mobile phone.</p>
                 <a className="btn btn-gold" href="#mobile-pbx">Explore Mobile PBX →</a>
@@ -264,7 +275,6 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="product-card cc" id="ccpms">
-                <div className="product-tag">PRODUCT 02</div>
                 <h3>Call Centre Performance Management System</h3>
                 <p>Give supervisors and managers the visibility to measure agent productivity, call quality and customer experience.</p>
                 <a className="btn btn-dark" href="/ccpms">Explore CCPMS →</a>
@@ -282,7 +292,6 @@ export default function HomePage() {
         <section id="ccpms-detail" style={{ background: "#f5f7fa" }}>
           <div className="container">
             <div className="section-head">
-              <div className="kicker">PRODUCT 02 · CCPMS</div>
               <h2>Don&apos;t just manage calls. Manage performance.</h2>
               <p>Your call centre is more than a team answering calls. It is a business performance centre. Measure what matters and turn customer conversations into opportunities to improve.</p>
             </div>
