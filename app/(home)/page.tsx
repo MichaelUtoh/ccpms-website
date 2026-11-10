@@ -200,7 +200,7 @@ export default function HomePage() {
               <h2>Look like the business you are becoming.</h2>
               <p>Whether you are running a one-person business, managing a growing team or working from your shop, your customers deserve a professional experience.</p>
               <p>Start small. Sound professional. Grow bigger.</p>
-              <OpenModalButton modal="signup" className="btn btn-gold">Get Your Business Number →</OpenModalButton>
+              <OpenModalButton modal="signup" className="btn btn-gold">Choose a Business Number →</OpenModalButton>
             </div>
             <div className="big-quote">“Your business may be new. Your communication should already be professional.”</div>
           </div>
@@ -292,6 +292,7 @@ export default function HomePage() {
         <section id="ccpms-detail" style={{ background: "#f5f7fa" }}>
           <div className="container">
             <div className="section-head">
+              <div className="kicker">CCPMS</div>
               <h2>Don&apos;t just manage calls. Manage performance.</h2>
               <p>Your call centre is more than a team answering calls. It is a business performance centre. Measure what matters and turn customer conversations into opportunities to improve.</p>
             </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 export type ModalId = "signup" | "demo";
@@ -136,8 +137,9 @@ export function OpenModalButton({
   children: React.ReactNode;
 }) {
   const { open } = useModal();
+  const router = useRouter();
   return (
-    <button className={className} style={style} onClick={() => open(modal)}>
+    <button className={className} style={style} onClick={() => (modal === "signup" ? router.push("/onboarding") : open(modal))}>
       {children}
     </button>
   );
