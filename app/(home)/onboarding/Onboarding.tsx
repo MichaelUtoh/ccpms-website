@@ -46,6 +46,11 @@ export default function Onboarding() {
     }
   };
   const capture = () => { stopCam(); setCam("captured"); };
+  const restart = () => {
+    stopCam();
+    setDone(false); setStep(0); setNumber(""); setBiz(""); setQuery(""); setPlanId(""); setNin(""); setCam("idle"); setCamErr(""); setAck(false);
+    window.scrollTo({ top: 0 });
+  };
   const kycReady = /^\d{11}$/.test(nin) && cam === "captured" && ack;
 
   const next = (e: React.FormEvent) => {
@@ -68,7 +73,7 @@ export default function Onboarding() {
           <p>A dedicated line for the business you&rsquo;re building. Let&rsquo;s make it yours.</p>
           <ol className="ob-steps">
             {steps.map((s, i) => (
-              <li key={s} className={done || i < step ? "done" : i === step ? "active" : ""}>
+              <li key={s} className={done ? (i === steps.length - 1 ? "active" : "done") : i < step ? "done" : i === step ? "active" : ""}>
                 <span>{done || i < step ? "✓" : i + 1}</span>{s}
               </li>
             ))}
@@ -88,11 +93,25 @@ export default function Onboarding() {
 
         <div className="ob-center">
           {done ? (
-            <div className="ob-card ob-success">
-              <div className="ob-check">✓</div>
-              <h1>You&rsquo;re all set (preview).</h1>
-              <p>In the live product, <b>{number}</b> would now be provisioned on the <b>{plan?.name}</b> plan and your dashboard would open.</p>
-              <Link className="btn btn-gold" href="/">Back to website →</Link>
+            <div className="ob-form">
+              <div className="ob-bigcheck">✓</div>
+              <div className="kicker">ONBOARDING PREVIEW COMPLETE</div>
+              <h1>Ready for your next chapter.</h1>
+              <p className="ob-sub">{biz || "You"}, you&rsquo;ve explored the complete onboarding journey.</p>
+              <div className="ob-card">
+                <span className="ob-pill">Preview submission complete</span>
+                <div className="ob-final-number">{number}</div>
+                <div className="ob-sum"><span>Plan</span><b>{plan?.name} · {plan?.users}</b></div>
+                <div className="ob-sum"><span>Monthly price</span><b>{plan?.price ? naira(plan.price) : "To be confirmed"}</b></div>
+                <div className="ob-sum"><span>Payment</span><b>Simulated confirmation</b></div>
+                <div className="ob-sum"><span>KYC</span><b>Sample submitted · unverified</b></div>
+                <div className="notice" style={{ marginTop: 22 }}>No number is reserved or activated. A live service requires real account authentication, payment confirmation and a connected identity verification provider.</div>
+                <a className="btn btn-gold ob-btn" href="mailto:Sales@agafglobalsystem.com.ng">Talk to our team ↗</a>
+              </div>
+              <div className="ob-actions">
+                <Link className="btn btn-outline" href="/">Back to website</Link>
+                <button type="button" className="ob-link" style={{ padding: 0, marginRight: 4 }} onClick={restart}>Restart preview</button>
+              </div>
             </div>
           ) : (
             <form onSubmit={next} className="ob-form">

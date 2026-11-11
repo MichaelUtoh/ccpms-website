@@ -91,3 +91,7 @@
 .ob input:-webkit-autofill,.ob input:-webkit-autofill:hover,.ob input:-webkit-autofill:focus,.ob input:-webkit-autofill:active{
   -webkit-box-shadow:0 0 0 1000px #fff inset;box-shadow:0 0 0 1000px #fff inset;-webkit-text-fill-color:#111;caret-color:#111;transition:background-color 9999s ease-out 0s}
 .ob input:autofill{box-shadow:0 0 0 1000px #fff inset;-webkit-text-fill-color:#111}
+
+.ob-bigcheck{width:64px;height:64px;border-radius:50%;background:#e8f3ee;color:#16866a;display:grid;place-items:center;font-size:28px;font-weight:700;margin-bottom:22px}
+.ob-final-number{font-size:38px;font-weight:800;letter-spacing:-1.2px;color:#111;margin:26px 0 24px}
+.ob-card .ob-btn{display:flex;align-items:center;text-decoration:none}
