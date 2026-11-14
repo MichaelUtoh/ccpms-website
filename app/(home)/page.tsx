@@ -324,49 +324,81 @@ export default function HomePage() {
             <div className="section-head">
               <div className="kicker">SIMPLE, FLEXIBLE PLANS</div>
               <h2>A better way to run your business calls.</h2>
-              <p>Choose a plan that suits your business. Final subscription prices, call charges, number fees and included features will be confirmed before launch.</p>
+              <p>Start with the team you have today. All published prices are billed monthly.</p>
             </div>
             <div className="pricing-grid">
               <div className="price-card">
-                <h3>Starter</h3>
-                <p>For individuals and new businesses getting organised.</p>
-                <div className="price">Get started</div>
+                <h3>Basic</h3>
+                <p>1 user · The essentials to get your business running.</p>
+                <div className="price">₦6,000 <small>/ month</small></div>
+                <OpenModalButton modal="signup" className="btn btn-outline" style={{ width: "100%" }}>Choose Basic</OpenModalButton>
                 <ul>
-                  <li>Dedicated business number options</li>
-                  <li>Mobile app access</li>
+                  <li>1 phone number</li>
+                  <li>Includes 1 user</li>
+                  <li>₦6,000 per additional person/user</li>
+                  <li>Professional welcome/caller greeting</li>
+                  <li>Call forwarding</li>
                   <li>Call history</li>
-                  <li>Core business calling features</li>
+                  <li>10-minute setup</li>
+                  <li>Everything managed for you</li>
+                  <li className="off">Call recording</li>
+                  <li className="off">AI team performance scoring</li>
+                  <li className="off">AI team-specific coaching</li>
+                  <li className="off">AI insights</li>
+                  <li className="off">Advanced team features</li>
+                  <li className="off">Full dashboard</li>
                 </ul>
-                <OpenModalButton modal="signup" className="btn btn-outline" style={{ width: "100%" }}>Choose Starter</OpenModalButton>
-              </div>
-              <div className="price-card featured">
-                <div className="kicker">GROWING BUSINESS</div>
-                <h3>Business</h3>
-                <p>For teams that want more control over customer calls.</p>
-                <div className="price">Flexible plan</div>
-                <ul>
-                  <li>Business number and team options</li>
-                  <li>Welcome message and IVR</li>
-                  <li>Call routing and recording options</li>
-                  <li>Call analytics and missed-call visibility</li>
-                </ul>
-                <OpenModalButton modal="signup" className="btn btn-gold" style={{ width: "100%" }}>Choose Business</OpenModalButton>
               </div>
               <div className="price-card">
-                <h3>CCPMS</h3>
-                <p>For contact centres focused on measurable performance.</p>
-                <div className="price">Request a demo</div>
+                <h3>Executive</h3>
+                <p>6–10 users · More capabilities for a larger team.</p>
+                <div className="price">₦30,000 <small>/ month</small></div>
+                <OpenModalButton modal="signup" className="btn btn-outline" style={{ width: "100%" }}>Choose Executive</OpenModalButton>
                 <ul>
-                  <li>Agent performance dashboards</li>
-                  <li>QA and performance scorecards</li>
-                  <li>Configured KPI tracking</li>
-                  <li>Management reporting</li>
+                  <li>1 phone number</li>
+                  <li>Includes 5 users</li>
+                  <li>₦10,000 per additional person/user</li>
+                  <li>Professional welcome/caller greeting</li>
+                  <li>Teams and ring groups</li>
+                  <li>Call queues with hold music</li>
+                  <li>Business hours</li>
+                  <li>Call history</li>
+                  <li>Call forwarding</li>
+                  <li>Call recording (90 days)</li>
+                  <li>Call transcripts</li>
+                  <li>Call routing and IVR</li>
+                  <li>Voicemail</li>
+                  <li>Smart decision-making analytics</li>
+                  <li>AI team performance scoring</li>
+                  <li>AI team-specific coaching</li>
+                  <li>AI insights</li>
+                  <li>10-minute setup</li>
+                  <li>Everything managed for you</li>
                 </ul>
-                <OpenModalButton modal="demo" className="btn btn-outline" style={{ width: "100%" }}>Book a Demo</OpenModalButton>
+              </div>
+              <div className="price-card">
+                <h3>Enterprise</h3>
+                <p>For enterprises that need custom and more advanced solutions.</p>
+                <div className="price">Let’s talk</div>
+                <a className="btn btn-outline" style={{ width: "100%" }} href="mailto:Sales@agafglobalsystem.com.ng">Talk to Sales ↗</a>
+                <ul>
+                  <li>Everything in Business, plus</li>
+                  <li>Unlimited users and teams</li>
+                  <li>Custom roles and permissions</li>
+                  <li>Dedicated account manager</li>
+                  <li>Bring your own trunk</li>
+                  <li>Data retention policies</li>
+                  <li>Audit and compliance</li>
+                  <li>Integrations</li>
+                  <li>Custom quotations</li>
+                </ul>
               </div>
             </div>
+            <p style={{ fontSize: 13, color: "#7b8799", textAlign: "center", marginTop: 22 }}>
+              Contact centre? <OpenModalButton modal="demo" className="btn btn-outline">Book a CCPMS Demo</OpenModalButton>
+            </p>
             <p style={{ fontSize: 11, color: "#7b8799", textAlign: "center", marginTop: 18 }}>
-              Pricing shown is indicative plan positioning, not a published tariff. Confirm all commercial terms before accepting payment.
+              All published prices are billed monthly.
             </p>
           </div>
         </section>
