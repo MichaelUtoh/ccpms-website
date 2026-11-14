@@ -9,12 +9,12 @@ const numbers = ["0203 950 3000", "0203 950 3001", "0203 950 3002", "0203 950 30
 
 const SAMPLE_NIN = "12345678901";
 
-type Plan = { id: string; name: string; users: string; blurb: string; price: number | null; tag?: string; perks: string[] };
+type Plan = { id: string; name: string; users: string; blurb: string; price: number | null; tag?: string; perks: string[]; off?: string[] };
 const plans: Plan[] = [
-  { id: "basic", name: "Basic", users: "1 user", blurb: "The essentials for your business calls.", price: 5000, perks: ["Basic calling functions", "A dedicated business number"] },
-  { id: "growth", name: "Growth", users: "2–5 users", blurb: "More room for your growing team.", price: 15000, tag: "FOR GROWING TEAMS", perks: ["Basic functions included", "Additional team features"] },
-  { id: "executive", name: "Executive", users: "6–10 users", blurb: "More capabilities for a larger team.", price: null, perks: ["Expanded team access", "More features for your business"] },
+  { id: "basic", name: "Basic", users: "1 user", blurb: "The essentials for your business calls.", price: 6000, perks: ["1 phone number", "Includes 1 user", "₦6,000 per additional person/user", "Professional welcome/caller greeting", "Call forwarding", "Call history", "10-minute setup", "Everything managed for you"], off: ["Call recording", "AI team performance scoring", "AI team-specific coaching", "AI insights", "Advanced team features", "Full dashboard"] },
+  { id: "executive", name: "Executive", users: "6–10 users", blurb: "More capabilities for a larger team.", price: 30000, perks: ["1 phone number", "Includes 5 users", "₦10,000 per additional person/user", "Professional welcome/caller greeting", "Teams and ring groups", "Call queues with hold music", "Business hours", "Call history", "Call forwarding", "Call recording (90 days)", "Call transcripts", "Call routing and IVR", "Voicemail", "Smart decision-making analytics", "AI team performance scoring", "AI team-specific coaching", "AI insights", "10-minute setup", "Everything managed for you"] },
 ];
+const ENT_PERKS = ["Everything in Business, plus", "Unlimited users and teams", "Custom roles and permissions", "Dedicated account manager", "Bring your own trunk", "Data retention policies", "Audit and compliance", "Integrations", "Custom quotations"];
 const naira = (n: number) => "₦" + n.toLocaleString("en-NG");
 
 export default function Onboarding() {
@@ -176,17 +176,18 @@ export default function Onboarding() {
                         <span className="ob-plan-head"><strong>{pl.name}</strong><i aria-hidden /></span>
                         <small>{pl.users} · {pl.blurb}</small>
                         <span className="ob-price">{pl.price ? <>{naira(pl.price)} <em>/ month</em></> : "To be confirmed"}</span>
-                        <ul>{pl.perks.map((x) => <li key={x}>{x}</li>)}</ul>
+                        <ul>{pl.perks.map((x) => <li key={x}>{x}</li>)}{pl.off?.map((x) => <li key={x} className="off">{x}</li>)}</ul>
                       </button>
                     ))}
                   </div>
                   <div className="ob-plan ob-ent">
                     <span className="ob-plan-head"><strong>Enterprise</strong><span className="ob-pill">More than 10 users</span></span>
-                    <span className="ob-price">₦30,000 <em>/ month</em></span>
-                    <small>A tailored setup. Talk to our sales team.</small>
-                    <a href="mailto:Sales@agafglobalsystem.com.ng">Email Sales@agafglobalsystem.com.ng ↗</a>
+                    <span className="ob-price">Let’s talk</span>
+                    <small>For enterprises that need custom and more advanced solutions.</small>
+                    <ul>{ENT_PERKS.map((x) => <li key={x}>{x}</li>)}</ul>
+                    <a href="mailto:Sales@agafglobalsystem.com.ng">Talk to Sales ↗</a>
                   </div>
-                  <p className="ob-hint">Executive pricing and exact additional features are to be confirmed. Enterprise onboarding is arranged with Sales.</p>
+                  <p className="ob-hint">Enterprise onboarding is arranged with Sales.</p>
                   <Actions back={() => setStep(1)} backLabel="Change number" label="Continue" disabled={!planId} />
                 </>
               )}
